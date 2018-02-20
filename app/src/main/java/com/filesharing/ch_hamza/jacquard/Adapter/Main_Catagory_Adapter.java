@@ -11,7 +11,7 @@ import com.filesharing.ch_hamza.jacquard.R;
  * Created by CH-Hamza on 2/19/2018.
  */
 
-public class Main_Catagories_Adpter extends RecyclerView.Adapter<Main_Catagories_Adpter.MyViewHolder> {
+public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Adapter.MyViewHolder> {
 
 
     @Override
