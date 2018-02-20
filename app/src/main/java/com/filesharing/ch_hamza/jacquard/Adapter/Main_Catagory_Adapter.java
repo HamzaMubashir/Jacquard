@@ -1,17 +1,23 @@
 package com.filesharing.ch_hamza.jacquard.Adapter;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.filesharing.ch_hamza.jacquard.Pojoclasses.Catagories;
 import com.filesharing.ch_hamza.jacquard.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by CH-Hamza on 2/19/2018.
  */
 
 public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Adapter.MyViewHolder> {
+    ArrayList<Catagories> arrayList= new ArrayList<>();
+    Activity activity;
 
 
     @Override
