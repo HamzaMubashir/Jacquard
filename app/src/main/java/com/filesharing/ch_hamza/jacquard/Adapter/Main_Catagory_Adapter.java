@@ -2,6 +2,7 @@ package com.filesharing.ch_hamza.jacquard.Adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,12 +19,17 @@ import java.util.ArrayList;
 public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Adapter.MyViewHolder> {
     ArrayList<Catagories> arrayList= new ArrayList<>();
     Activity activity;
-
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.catagories,parent,false);
+        return new MyViewHolder(view);
     }
+
+
+//    @Override
+//    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//        return null;
+//    }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
