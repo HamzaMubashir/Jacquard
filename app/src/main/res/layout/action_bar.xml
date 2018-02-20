@@ -4,26 +4,27 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.v7.widget.Toolbar
+        android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:id="@+id/toolbar"
         app:layout_scrollFlags="scroll|enterAlways"
-        android:background="@color/colorgrey"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        >
+        android:background="@color/green"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
         <ImageView
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_launcher_background"
-            android:layout_gravity="left"
-            />
+            android:layout_height="match_parent"
+
+            android:layout_gravity="left"/>
+            <!--android:background="@drawable/forecast21"-->
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
-            android:background="@drawable/ic_launcher_background"/>
-
+            android:id="@+id/bag"/>
+            <!--android:background="@"-->
 
     </android.support.v7.widget.Toolbar>
 
