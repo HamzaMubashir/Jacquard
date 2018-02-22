@@ -8,24 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways"
-        android:background="@color/green"
+        android:background="@color/grey"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="match_parent"
-
             android:layout_gravity="left"/>
-            <!--android:background="@drawable/forecast21"-->
-
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
-            android:id="@+id/bag"/>
-            <!--android:background="@"-->
-
+            android:id="@+id/bag"
+            />
     </android.support.v7.widget.Toolbar>
 
 </android.support.constraint.ConstraintLayout>

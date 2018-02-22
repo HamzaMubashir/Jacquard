@@ -21,13 +21,10 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
     }
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return  mFragmentList.get(position);
     }
 
-    public void addFragment(Fragment fragment, String title) {
-        mFragmentList.add(fragment);
-        mFragmentTitleList.add(title);
-    }
+
     @Override
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
@@ -37,5 +34,10 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return mFragmentList.size();
+    }
+
+    public void addFragment(Fragment fragment, String title) {
+        mFragmentList.add(fragment);
+        mFragmentTitleList.add(title);
     }
 }

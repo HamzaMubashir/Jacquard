@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.filesharing.ch_hamza.jacquard.MainActivity">
+
     <!--<include layout="@layout/action_bar">    </include>-->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,8 +24,8 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
-        <include
-            layout="@layout/action_bar" />
+        <!--<include-->
+            <!--layout="@layout/action_bar" />-->
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tablayout"

@@ -32,7 +32,32 @@ public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Ad
 //    }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        holder.name.setText(arrayList.get(position).getName());
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int length=arrayList.get(position).getChild();
+                if (length!=0)
+                {
+
+//                Intent intent = new Intent(activity,Sub_Categories.class);
+//                  intent.putExtra("id",arrayList.get(position).getCategory_id());
+//
+//                  activity.startActivity(intent);
+             }
+                else
+                {
+
+//                    Intent intent=new Intent(activity,All_Products.class);
+//                    intent.putExtra("Id",arrayList.get(position).getCategory_id());
+//
+//                    activity.startActivity(intent);
+
+                }
+            }
+        });
+
 
     }
 
