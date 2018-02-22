@@ -5,12 +5,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toolbar;
 
 import com.filesharing.ch_hamza.jacquard.Adapter.Home_Pager_Adapter;
-import com.filesharing.ch_hamza.jacquard.Fragments.Home2;
+import com.filesharing.ch_hamza.jacquard.Fragments.Home;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-      
 
 
         viewPager = (ViewPager)findViewById(R.id.viewpager);
@@ -44,21 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
     }
 
-
-
+    private void setSupportActionBar(Toolbar toolbar) {
+    }
 
     public void setupViewPager(ViewPager upViewPager) {
 
        Home_Pager_Adapter adapter = new Home_Pager_Adapter(getSupportFragmentManager());
-        adapter.addFragment(new Home2(), "HOME");
-//        adapter.addFragment(new newarival(), "New Arival");
-        upViewPager.setAdapter(adapter);
+        adapter.addFragment( new  Home(), "HOME");
+       // adapter.addFragment(new newarival(), "New Arival");
+        viewPager.setAdapter(adapter);
 //        this.upViewPager = upViewPager;
     }
 }

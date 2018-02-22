@@ -1,6 +1,7 @@
 package com.filesharing.ch_hamza.jacquard.Adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.filesharing.ch_hamza.jacquard.R;
 
 import java.util.ArrayList;
 
+import static android.os.Build.VERSION_CODES.O;
+
 /**
  * Created by CH-Hamza on 2/19/2018.
  */
@@ -19,6 +22,11 @@ import java.util.ArrayList;
 public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Adapter.MyViewHolder> {
     ArrayList<Catagories> arrayList= new ArrayList<>();
     Activity activity;
+    public Main_Catagory_Adapter(ArrayList<Catagories> arrayList, Context context)
+    {
+        this.arrayList=arrayList;
+        activity=(Activity)context;
+    }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.catagories,parent,false);
@@ -32,29 +40,13 @@ public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Ad
 //    }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.name.setText(arrayList.get(position).getName());
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                int length=arrayList.get(position).getChild();
-                if (length!=0)
-                {
+            public void onClick(View view) {
 
-//                Intent intent = new Intent(activity,Sub_Categories.class);
-//                  intent.putExtra("id",arrayList.get(position).getCategory_id());
-//
-//                  activity.startActivity(intent);
-             }
-                else
-                {
 
-//                    Intent intent=new Intent(activity,All_Products.class);
-//                    intent.putExtra("Id",arrayList.get(position).getCategory_id());
-//
-//                    activity.startActivity(intent);
-
-                }
             }
         });
 

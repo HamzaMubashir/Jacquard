@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.filesharing.ch_hamza.jacquard.Fragments.Home;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class Home_Pager_Adapter extends FragmentPagerAdapter {
 
-    private final List<Fragment> mFragmentList = new ArrayList<>();
+    private final List<Home> mFragmentList = new ArrayList<Home>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
     public Home_Pager_Adapter(FragmentManager fm) {
@@ -21,10 +23,13 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
     }
     @Override
     public Fragment getItem(int position) {
-        return  mFragmentList.get(position);
+        return null;
     }
 
-
+    public void addFragment(Home fragment, String title) {
+        mFragmentList.add(fragment);
+        mFragmentTitleList.add(title);
+    }
     @Override
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
@@ -34,10 +39,5 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return mFragmentList.size();
-    }
-
-    public void addFragment(Fragment fragment, String title) {
-        mFragmentList.add(fragment);
-        mFragmentTitleList.add(title);
     }
 }
