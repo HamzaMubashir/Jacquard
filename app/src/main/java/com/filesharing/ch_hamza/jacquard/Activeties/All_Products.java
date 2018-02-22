@@ -10,13 +10,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.filesharing.ch_hamza.jacquard.Adapter.All_Products_Adapter;
+import com.filesharing.ch_hamza.jacquard.Fragments.Home;
 import com.filesharing.ch_hamza.jacquard.MainActivity;
+import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Products_pojo;
 import com.filesharing.ch_hamza.jacquard.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class All_Products extends AppCompatActivity {
     ArrayList<Products_pojo> arrayList=new ArrayList<>();
@@ -53,10 +67,79 @@ public class All_Products extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         Intent intent =getIntent();
         id = intent.getStringExtra("id");
-        Get
+        GetAllProducts();
+
 
 
 
 
     }
+    /////getting all product by vollay/////
+    private void GetAllProducts()
+    {
+        loading = ProgressDialog.show(All_Products.this,"Loading...","Please wait...",false,false);
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_ALL_PRODUCTS, new com.android.volley.Response.Listener<String>()
+        {
+
+             @Override
+            public void onResponse(String response) {
+                try
+                {
+                    JSONObject abc = new JSONObject(response);
+                    for(int i=1; i<= abc.length(); i++) {
+                        String num = String.valueOf(i);
+                        JSONObject data = abc.getJSONObject(num);
+                        arrayList.add(new Products_pojo(data.getString("product_id"), data.getString("pro_name")
+                                , data.getString("img_url").replace("localhost", Config.ip)));
+
+
+
+
+                    }
+                adapter=new All_Products_Adapter(arrayList,All_Products.this);
+                recyclerView.setAdapter(adapter);
+                }
+                catch (JSONException e) {
+                e.printStackTrace();
+                Toast.makeText(All_Products.this,"Nothing is Available For Time Being",Toast.LENGTH_LONG).show();
+                loading.dismiss();
+                onBackPressed();
+            }
+
+            }
+    }, new com.android.volley.Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            loading.dismiss();
+            //  Log.e("Error",error.printStackTrace());
+            Toast.makeText(All_Products.this.getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
+            onBackPressed();
+
+        }
+    }
+
+        ){
+        @Override
+        protected Map<String, String> getParams() {
+            Map<String, String> params = new HashMap<String, String>();
+
+            params.put("category_id", id);
+            return params;
+        }
+    };    request.setRetryPolicy(new DefaultRetryPolicy(
+            0,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue = Volley.newRequestQueue(All_Products.this.getApplicationContext());
+        requestQueue.add(request);
+
 }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(All_Products.this,Home.class);
+        startActivity(intent);
+    }
+}
+
+
