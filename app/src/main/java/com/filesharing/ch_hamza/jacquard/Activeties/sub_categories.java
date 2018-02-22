@@ -112,7 +112,7 @@ public class sub_categories extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 loading.dismiss();
-                Toast.makeText(sub_categories.this.getApplicationContext(),"Volley Error"+error,Toast.LENGTH_SHORT.show);
+                Toast.makeText(sub_categories.this.getApplicationContext(),"Volley Error"+error, Toast.LENGTH_SHORT).show();
             }
         }
         ){
