@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activeties.sub_categories"></activity>
+        <activity android:name=".Activeties.sub_categories" />
+        <activity android:name=".Activeties.Check_Out"></activity>
     </application>
 
 </manifest>

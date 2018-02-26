@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Jacquard.iml" filepath="$PROJECT_DIR$/Jacquard.iml" />
+      <module fileurl="file://D:\Jacquard\Jacquard\Jacquard.iml" filepath="D:\Jacquard\Jacquard\Jacquard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Jacquard\Jacquard\app\app.iml" filepath="D:\Jacquard\Jacquard\app\app.iml" />
     </modules>
   </component>
 </project>
