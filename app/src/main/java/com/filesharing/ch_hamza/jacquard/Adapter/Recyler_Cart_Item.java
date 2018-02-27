@@ -41,11 +41,14 @@ public class Recyler_Cart_Item extends RecyclerView.Adapter<Recyler_Cart_Item.My
     Float price;
     String Dis;
 
-    public Recyler_Cart_Item(ArrayList<Cart_item_pojo> arrayList, Context context, String Cartid){
+    public Recyler_Cart_Item(ArrayList<Recyler_Cart_Item> arrayList, Context context, String Cartid){
         this.arrayList=arrayList;
         this.Cartid=Cartid;
         this.activity=(Activity)context;
 
+    }
+
+    public Recyler_Cart_Item(String product_id, String name, String replace, String item_qty, String total, String item_id, String price, String discount_price) {
     }
 
 
