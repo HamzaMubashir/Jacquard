@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     TabLayout tabLayout;
+    Home_Pager_Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.bar);
-        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.bar);
+//        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
         viewPager = (ViewPager)findViewById(R.id.viewpager);
-
-
         setupViewPager(viewPager);
         tabLayout = (TabLayout)findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
@@ -45,15 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setSupportActionBar(Toolbar toolbar) {
-    }
-
     public void setupViewPager(ViewPager upViewPager) {
 
        Home_Pager_Adapter adapter = new Home_Pager_Adapter(getSupportFragmentManager());
-        adapter.addFragment( new  Home(), "HOME");
-       // adapter.addFragment(new newarival(), "New Arival");
-        viewPager.setAdapter(adapter);
-//        this.upViewPager = upViewPager;
+        adapter.addFragment( new Home(), "HOME");
+        upViewPager.setAdapter(adapter);
     }
 }

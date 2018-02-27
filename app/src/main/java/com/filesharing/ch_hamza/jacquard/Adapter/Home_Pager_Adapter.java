@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Home_Pager_Adapter extends FragmentPagerAdapter {
 
-    private final List<Home> mFragmentList = new ArrayList<Home>();
+    private final List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
     public Home_Pager_Adapter(FragmentManager fm) {
@@ -26,7 +26,7 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
         return null;
     }
 
-    public void addFragment(Home fragment, String title) {
+    public void addFragment(Fragment fragment, String title) {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }
