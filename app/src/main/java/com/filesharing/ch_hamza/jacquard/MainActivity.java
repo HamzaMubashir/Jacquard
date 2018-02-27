@@ -11,6 +11,7 @@ import android.widget.Toolbar;
 
 import com.filesharing.ch_hamza.jacquard.Adapter.Home_Pager_Adapter;
 import com.filesharing.ch_hamza.jacquard.Fragments.Home;
+import com.filesharing.ch_hamza.jacquard.Fragments.Home2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public void setupViewPager(ViewPager upViewPager) {
 
        Home_Pager_Adapter adapter = new Home_Pager_Adapter(getSupportFragmentManager());
-        adapter.addFragment( new Home(), "HOME");
+        adapter.addFragment( new Home2(), "HOME");
         upViewPager.setAdapter(adapter);
     }
 }

@@ -23,7 +23,7 @@ public class Home_Pager_Adapter extends FragmentPagerAdapter {
     }
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return mFragmentList.get(position);
     }
 
     public void addFragment(Fragment fragment, String title) {
