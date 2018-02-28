@@ -1,16 +1,20 @@
 package com.filesharing.ch_hamza.jacquard;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toolbar;
-
+import android.widget.ImageView;
+import com.filesharing.ch_hamza.jacquard.Activeties.My_Cart;
 import com.filesharing.ch_hamza.jacquard.Adapter.Home_Pager_Adapter;
-import com.filesharing.ch_hamza.jacquard.Fragments.Home;
+import com.filesharing.ch_hamza.jacquard.Fragments.Catagories;
 import com.filesharing.ch_hamza.jacquard.Fragments.Home2;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,13 +33,31 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        setContentView(R.layout.activity_main);
+
 //
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.bar);
-//        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ImageView whatsapp=(ImageView) findViewById(R.id.whatsapp);
+        whatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("smsto"+"923111101102");
+                Intent i=new Intent(Intent.ACTION_SENDTO,uri);
+                i.setPackage("com.whatsapp");
+                startActivity(getIntent());
+            }
+        });
+        ImageView bag=(ImageView)findViewById(R.id.bag);
+        bag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,My_Cart.class);
+                startActivity(intent);
+            }
+        });
         viewPager = (ViewPager)findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         tabLayout = (TabLayout)findViewById(R.id.tablayout);
@@ -49,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
        Home_Pager_Adapter adapter = new Home_Pager_Adapter(getSupportFragmentManager());
         adapter.addFragment( new Home2(), "HOME");
+        adapter.addFragment( new Catagories(), "Categories");
         upViewPager.setAdapter(adapter);
     }
 }

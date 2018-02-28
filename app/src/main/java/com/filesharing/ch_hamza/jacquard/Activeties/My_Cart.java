@@ -25,6 +25,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.filesharing.ch_hamza.jacquard.Adapter.Recyler_Cart_Item;
+import com.filesharing.ch_hamza.jacquard.MainActivity;
+import com.filesharing.ch_hamza.jacquard.Pojoclasses.Cart_item_pojo;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Catagories;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
 import com.filesharing.ch_hamza.jacquard.R;
@@ -42,7 +44,7 @@ public class My_Cart extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     private ProgressDialog loading;
     Recyler_Cart_Item adapter;
-    ArrayList<Recyler_Cart_Item> arrayList= new ArrayList<Recyler_Cart_Item>();
+    ArrayList<Cart_item_pojo> arrayList= new ArrayList<Cart_item_pojo>();
     String Cart_no=null;
     String grand,grand2,discount;
     int b,c;
@@ -56,14 +58,14 @@ public class My_Cart extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_my__cart);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(My_Cart.this, Catagories.class);
+                Intent intent = new Intent(My_Cart.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -128,7 +130,7 @@ public class My_Cart extends AppCompatActivity {
                         JSONArray abc = new JSONArray(response);
                         for (int i = 0; i < abc.length(); i = i + 2) {
                             JSONObject data = abc.getJSONObject(i);
-                            arrayList.add(new Recyler_Cart_Item(data.getString("product_id"),data.getString("name")
+                            arrayList.add(new Cart_item_pojo(data.getString("product_id"),data.getString("name")
                                     ,data.getString("image_url").replace("localhost",Config.ip),data.getString("item_qty"),data.getString("total"),
                                     data.getString("item_id"),data.getString("price"),data.getString("discount_price")));
                             grand = data.getString("total");

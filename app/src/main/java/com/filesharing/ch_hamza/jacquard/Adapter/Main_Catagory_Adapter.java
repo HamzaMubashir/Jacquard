@@ -54,9 +54,7 @@ public class Main_Catagory_Adapter extends RecyclerView.Adapter<Main_Catagory_Ad
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
-    }
+    public int getItemCount(){return arrayList.size();}
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder
     {
