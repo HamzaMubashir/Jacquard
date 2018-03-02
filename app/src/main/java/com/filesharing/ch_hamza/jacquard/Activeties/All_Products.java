@@ -85,15 +85,13 @@ public class All_Products extends AppCompatActivity {
             public void onResponse(String response) {
                 try
                 {
+                    loading.dismiss();
                     JSONObject abc = new JSONObject(response);
                     for(int i=1; i<= abc.length(); i++) {
                         String num = String.valueOf(i);
                         JSONObject data = abc.getJSONObject(num);
                         arrayList.add(new Products_pojo(data.getString("product_id"), data.getString("pro_name")
                                 , data.getString("img_url").replace("localhost", Config.ip)));
-
-
-
 
                     }
                 adapter=new All_Products_Adapter(arrayList,All_Products.this);
@@ -137,7 +135,7 @@ public class All_Products extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent=new Intent(All_Products.this,Home.class);
+        Intent intent=new Intent(All_Products.this,MainActivity.class);
         startActivity(intent);
     }
 }

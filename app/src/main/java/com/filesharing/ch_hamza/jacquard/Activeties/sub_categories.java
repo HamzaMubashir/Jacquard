@@ -77,7 +77,7 @@ public class sub_categories extends AppCompatActivity {
 
     private void Getsub_categories() {
         loading = ProgressDialog.show(sub_categories.this,"loading","plasewait",false,false);
-        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_sub_categories, new com.android.volley.Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_Sub_Categories, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 JSONArray data=null;
@@ -88,7 +88,7 @@ public class sub_categories extends AppCompatActivity {
                 }
                 if (data == null){
                     Intent intent=new Intent(sub_categories.this,All_Products.class);
-                    intent.putExtra("Id",id);
+                    intent.putExtra("id",id);
                     startActivity(intent);
                 }
                 else {

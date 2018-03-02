@@ -3,6 +3,7 @@ package com.filesharing.ch_hamza.jacquard.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -47,7 +48,9 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
     String id;
     ArrayList<All_product_pojo> arrayList=new ArrayList<>();
     RecyclerView recyclerView,recyclerView2;
-    String newArr_cat_id="60";
+    String newArr_cat_id="63";
+    String sale_cat_id="58";
+
     Recycler_Adapter_All_Products_new adapter;
     RecyclerView.LayoutManager layoutManager;
     private ProgressDialog loading;
@@ -55,7 +58,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
     String menimage,womenimage,saleimage,bajiImage;
     static String path1,path2;
     ImageView men,women,sale,New;
-    TextView new_a,new_a2;
+    TextView new_a,new_a2,new_tx,sale_tx;
     HashMap<String, String> HashMapForURL ;
     public Home2() {
         // Required empty public constructor
@@ -80,26 +83,38 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
         recyclerView2=(RecyclerView)view.findViewById(R.id.model_recyclerView2);
         new_a=(TextView)view.findViewById(R.id.new_a);
         new_a2=(TextView)view.findViewById(R.id.new_a2);
+
+        new_tx=(TextView)view.findViewById(R.id.new_tx);
+        sale_tx=(TextView)view.findViewById(R.id.sale_tx);
         recyclerView.setHasFixedSize(true);
         recyclerView2.setHasFixedSize(true);
-        Glide.with(getActivity()).load(saleimage).into(sale);
-        Glide.with(this).load(bajiImage).into(New );
+        footer=(LinearLayout)view.findViewById(R.id.footer);
+        new_a=(TextView)view.findViewById(R.id.new_a);
+        footer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://itpvt.net/"));
+                startActivity(myIntent);
+            }
+        });
+//        Glide.with(getActivity()).load(saleimage).into(sale);
+//        Glide.with(this).load(bajiImage).into(New );
         GetAllProducts();
         GetAllProducts2();
         sale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent=new Intent(getActivity(),All_Products.class);
-//                intent.putExtra("Id","56");
-//                startActivity(intent);
+                Intent intent=new Intent(getActivity(),All_Products.class);
+                intent.putExtra("id","59");
+                startActivity(intent);
             }
         });
         New.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {//60
-//                Intent intent=new Intent(getActivity(),All_Products.class);
-//                intent.putExtra("Id","55");
-//                startActivity(intent);
+                Intent intent=new Intent(getActivity(),All_Products.class);
+                intent.putExtra("id","60");
+                startActivity(intent);
             }
         });
         AddImagesUrlOnline();
@@ -158,6 +173,8 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                     e.printStackTrace();
 //                    loading.dismiss();
                     new_a.setVisibility(View.GONE);
+                    sale_tx.setVisibility(View.GONE);
+
                 }
 
 
@@ -288,6 +305,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                     e.printStackTrace();
 //                    loading.dismiss();
                     new_a.setVisibility(View.GONE);
+                    new_tx.setVisibility(View.GONE);
                 }
 
 
@@ -310,7 +328,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("category_id", newArr_cat_id);
+                params.put("category_id", sale_cat_id);
                 return params;
             }
         };

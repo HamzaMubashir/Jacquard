@@ -10,7 +10,7 @@ public class Config {
     public static final String BANNER1 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner1.jpg";
     public static final String BANNER2 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner3.jpg";
     public static final String BANNER3 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner2.jpg";
-    public static final String URL_sub_categories= "http://forecast.com.pk/getSubCategories.php";
+//    public static final String URL_sub_categories= "http://forecast.com.pk/getSubCategories.php";
     public static final String HOME_FOOTWARE = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/footware.jpg";
     public static final String HOMW_SALE = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/sale.jpg";
 

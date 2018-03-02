@@ -53,7 +53,7 @@ public class Catagories extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_catagories, container, false);
 
         recyclerView=(RecyclerView)view.findViewById(R.id.model_recyclerView);
-        layoutManager=new GridLayoutManager(getActivity(),1);
+        layoutManager=new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         MainCategories();
