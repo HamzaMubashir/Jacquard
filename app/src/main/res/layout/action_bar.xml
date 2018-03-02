@@ -13,10 +13,10 @@
 
         <ImageView
             android:layout_width="160dp"
-            android:layout_margin="5dp"
+            android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:background="@drawable/logo_j"/>
+            android:background="@drawable/logo_j_copy"/>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
