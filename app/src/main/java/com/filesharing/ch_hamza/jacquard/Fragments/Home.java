@@ -25,9 +25,7 @@ public class Home extends Fragment implements BaseSliderView.OnSliderClickListen
  RecyclerView recyclerView;
  static String path0, path1, path2;
     HashMap<String, String> HashMapForURL ;
-    public Home() {
-        // Required empty public constructor
-    }
+
 
 
     @Override
@@ -63,6 +61,9 @@ return view;
         HashMapForURL.put("  ", path1);
         HashMapForURL.put("   ", path2);
         callSlider();
+    }
+    public Home() {
+        // Required empty public constructor
     }
 
 
