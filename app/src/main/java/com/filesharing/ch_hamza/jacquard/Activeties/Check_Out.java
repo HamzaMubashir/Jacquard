@@ -72,10 +72,18 @@ public class Check_Out extends AppCompatActivity {
         whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Uri uri=Uri.parse("smsto:"+"+923111101102");
-//                Intent i =new Intent(Intent.ACTION_SENDTO,uri);
-//                i.setPackage("com.whatsapp");
-//                startActivity(i);
+                Uri uri  =Uri.parse("smsto:"+"+923237588821");
+                Intent intent =new Intent(Intent.ACTION_SENDTO,uri);
+                intent.setPackage("com.whatsapp");
+                startActivity(intent);
+            }
+        });
+        ImageView bag=(ImageView)findViewById(R.id.bag);
+        bag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Check_Out.this,My_Cart.class);
+                startActivity(intent);
             }
         });
         detail=(LinearLayout)findViewById(R.id.detail);
@@ -189,14 +197,6 @@ public class Check_Out extends AppCompatActivity {
         });
 
 //        review=(Button)findViewById(R.id.review);
-        ImageView bag=(ImageView)findViewById(R.id.bag);
-        bag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent=new Intent(Check_Out.this,MyCart.class);
-//                startActivity(intent);
-            }
-        });
 //        review.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

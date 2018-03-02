@@ -2,6 +2,7 @@ package com.filesharing.ch_hamza.jacquard.Activeties;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.filesharing.ch_hamza.jacquard.Adapter.sub_cat_recylcerview;
+import com.filesharing.ch_hamza.jacquard.MainActivity;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.sub_cat;
 import com.filesharing.ch_hamza.jacquard.R;
@@ -71,6 +73,16 @@ public class sub_categories extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         WEB_URL=intent.getStringExtra("weburl");
+        ImageView whatsapp=(ImageView) findViewById(R.id.whatsapp);
+        whatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri  =Uri.parse("smsto:"+"+923237588821");
+                Intent intent =new Intent(Intent.ACTION_SENDTO,uri);
+                intent.setPackage("com.whatsapp");
+                startActivity(intent);
+            }
+        });
         Getsub_categories();
 
     }

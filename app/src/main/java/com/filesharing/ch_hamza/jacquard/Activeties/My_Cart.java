@@ -70,15 +70,15 @@ public class My_Cart extends AppCompatActivity {
             }
         });
         ImageView whatsapp=(ImageView) findViewById(R.id.whatsapp);
-        whatsapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("smsto"+"923111101102");
-                Intent i=new Intent(Intent.ACTION_SENDTO,uri);
-                i.setPackage("com.whatsapp");
-                startActivity(getIntent());
-            }
-        });
+whatsapp.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Uri uri  =Uri.parse("smsto:"+"+923237588821");
+        Intent intent =new Intent(Intent.ACTION_SENDTO,uri);
+        intent.setPackage("com.whatsapp");
+        startActivity(intent);
+    }
+});
         recyclerView=(RecyclerView)findViewById(R.id.model_recyclerView);
         all_total=(TextView)findViewById(R.id.g_price);
         chek=(Button)findViewById(R.id.chekout);

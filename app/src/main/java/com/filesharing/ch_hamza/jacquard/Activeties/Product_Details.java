@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -74,26 +76,36 @@ LinearLayout spinners;
         //Remove notification bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_product__details);
-//        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Product_Details.super.onBackPressed();
-//            }
-//        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Product_Details.super.onBackPressed();
+            }
+        });
 
-
-        ImageView bag = (ImageView) findViewById(R.id.bag);
+        ImageView whatsapp=(ImageView) findViewById(R.id.whatsapp);
+        whatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri  =Uri.parse("smsto:"+"+923237588821");
+                Intent intent =new Intent(Intent.ACTION_SENDTO,uri);
+                intent.setPackage("com.whatsapp");
+                startActivity(intent);
+            }
+        });
+        ImageView bag=(ImageView)findViewById(R.id.bag);
         bag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(Product_Details.this, MyCart.class);
-//                startActivity(intent);
+                Intent intent=new Intent(Product_Details.this,My_Cart.class);
+                startActivity(intent);
             }
         });
+
         final Intent intent = getIntent();
         P_id = intent.getStringExtra("product_id");
         sku = intent.getStringExtra("SKU");
