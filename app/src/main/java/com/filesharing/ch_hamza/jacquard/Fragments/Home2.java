@@ -104,7 +104,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(),All_Products.class);
-                intent.putExtra("id","59");
+                intent.putExtra("id","60");
                 startActivity(intent);
             }
         });
@@ -112,7 +112,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
             @Override
             public void onClick(View v) {//60
                 Intent intent=new Intent(getActivity(),All_Products.class);
-                intent.putExtra("id","60");
+                intent.putExtra("id","59");
                 startActivity(intent);
             }
         });
