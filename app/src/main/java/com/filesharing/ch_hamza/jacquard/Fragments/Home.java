@@ -39,7 +39,7 @@ public class Home extends Fragment implements BaseSliderView.OnSliderClickListen
         sliderLayout = (SliderLayout) view.findViewById(R.id.slider);
         path0 =Config.BANNER1;
         path1= Config.BANNER2;
-        path2=Config.BANNER3;
+       // path2=Config.BANNER3;
         recyclerView=(RecyclerView)view.findViewById(R.id.model_recyclerView);
         recyclerView.setHasFixedSize(true);
         AddImagesUrlOnline();
@@ -59,7 +59,7 @@ return view;
 
         HashMapForURL.put(" ", path0);
         HashMapForURL.put("  ", path1);
-        HashMapForURL.put("   ", path2);
+//        HashMapForURL.put("   ", path2);
         callSlider();
     }
     public Home() {

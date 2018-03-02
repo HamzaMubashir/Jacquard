@@ -20,7 +20,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -74,7 +73,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
         sliderLayout = (SliderLayout) view.findViewById(R.id.slider);
         path0 = Config.BANNER1;
         path1= Config.BANNER2;
-        path2=Config.BANNER3;
+//        path2=Config.BANNER3;
         saleimage=Config.HOMW_SALE;
         bajiImage  = Config.HOME_FOOTWARE;
         sale=(ImageView)view.findViewById(R.id.img1);

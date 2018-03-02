@@ -7,16 +7,19 @@ package com.filesharing.ch_hamza.jacquard.Pojoclasses;
 public class Config {
 
     public static final String ip="192.168.100.10";
-    public static final String BANNER1 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner1.jpg";
-    public static final String BANNER2 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner3.jpg";
-    public static final String BANNER3 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner2.jpg";
+    public static final String BANNER1 = "http://jacquard.pk/media/wysiwyg/mobile/Banner_1.jpg";
+    public static final String BANNER2 = "http://jacquard.pk/media/wysiwyg/mobile/Banner_2.jpg";
+   // public static final String BANNER3 = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/banner2.jpg";
 //    public static final String URL_sub_categories= "http://forecast.com.pk/getSubCategories.php";
-    public static final String HOME_FOOTWARE = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/footware.jpg";
-    public static final String HOMW_SALE = "http://www.forecast.com.pk/media/wysiwyg/porto/mobile/sale.jpg";
+    public static final String HOME_FOOTWARE = "http://jacquard.pk/media/wysiwyg/mobile/emroidered.png";
+    public static final String HOMW_SALE = "http://jacquard.pk/media/wysiwyg/mobile/printed.png";
 
 ///////////////////SHARED PREFRENCE CART////////////////////////
 //    public static final String LOGIN_SUCCESS = "success";
 public static final String SHARED_PREF_CART = "cart";
+    public static final String SIZE_CHART = "http://jacquard.pk/media/wysiwyg/porto/banners/Size%20chart.jpg";
+
+
     public static final String SHARED_PREF_CART_NO = "cart_id";
     ////////////////////////////////////////////
 //

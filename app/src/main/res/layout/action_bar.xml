@@ -8,15 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways"
-        android:background="@color/black"
+        android:background="@drawable/rounded_corner"
+        app:theme="@style/ToolbarStyle">
+
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <ImageView
             android:layout_width="160dp"
-            android:layout_margin="6dp"
+            android:layout_margin="5dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:background="@drawable/logo_j_copy"/>
+            android:background="@drawable/logo_j_copy"></ImageView>
+
+
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"

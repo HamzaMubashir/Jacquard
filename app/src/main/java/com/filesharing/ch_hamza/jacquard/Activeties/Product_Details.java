@@ -56,6 +56,7 @@ public class Product_Details extends AppCompatActivity {
     EditText ed_qty;
     Spinner s_color,s_size;
     String value_indexc="",value_indexs="";
+    Button sizechart;
     Button Buy;
     ImageView imageView;
 LinearLayout spinners;
@@ -120,6 +121,7 @@ LinearLayout spinners;
 //        tv_qty=(TextView)findViewById(R.id.tv_qty);
         tv_disprice = (TextView) findViewById(R.id.tv_disprice);
         Buy = (Button) findViewById(R.id.buy);
+        sizechart = (Button) findViewById(R.id.sizechart);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +136,18 @@ LinearLayout spinners;
                 }
             }
         });
+        sizechart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Product_Details.this, Size_Chart.class);
+                startActivity( i);
+
+
+
+
+            }
+        });
+
 
         Buy.setOnClickListener(new View.OnClickListener() {
             @Override
