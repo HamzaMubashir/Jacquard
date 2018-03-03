@@ -72,7 +72,6 @@ LinearLayout spinners;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product__details);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         //Remove notification bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -130,9 +129,9 @@ LinearLayout spinners;
                 if (Image_Url == null) {
                     Toast.makeText(getApplicationContext(), "Network Connection Error No Image", Toast.LENGTH_SHORT).show();
                 } else {
-//                    Intent intent=new Intent(Product_Details.this,FullScreenImage.class);
-//                    intent.putExtra("URL",Image_Url);
-//                    startActivity(intent);
+                    Intent intent=new Intent(Product_Details.this,FullScreenImage.class);
+                    intent.putExtra("URL",Image_Url);
+                    startActivity(intent);
                 }
             }
         });
@@ -217,17 +216,34 @@ LinearLayout spinners;
             }
         });
         s_size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Spinner_attribute_Pojo country = (Spinner_attribute_Pojo) parent.getSelectedItem();
+                                             @Override
+                                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+                                             {
+                                                                 Spinner_attribute_Pojo country = (Spinner_attribute_Pojo) parent.getSelectedItem();
                 value_indexc = country.getValue_index().toString();
                 size_name = country.getLabel().toString();
-            }
+                                             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+                                             @Override
+                                             public void onNothingSelected(AdapterView<?> parent) {
+
+                                             }
+                                         } );
+
+
+
+                                         //{
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                Spinner_attribute_Pojo country = (Spinner_attribute_Pojo) parent.getSelectedItem();
+//                value_indexc = country.getValue_index().toString();
+//                size_name = country.getLabel().toString();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//            }
+//        });
         s_color.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

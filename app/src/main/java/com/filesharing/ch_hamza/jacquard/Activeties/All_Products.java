@@ -91,7 +91,8 @@ public class All_Products extends AppCompatActivity {
                         String num = String.valueOf(i);
                         JSONObject data = abc.getJSONObject(num);
                         arrayList.add(new Products_pojo(data.getString("product_id"), data.getString("pro_name")
-                                , data.getString("img_url").replace("localhost", Config.ip)));
+                                , data.getString("img_url").replace("localhost", Config.ip),data.getString("sku")
+                                ,data.getString("product_quantity")));
 
                     }
                 adapter=new All_Products_Adapter(arrayList,All_Products.this);

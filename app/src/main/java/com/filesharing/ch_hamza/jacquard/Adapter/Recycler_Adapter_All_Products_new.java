@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.filesharing.ch_hamza.jacquard.Activeties.Product_Details;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.All_product_pojo;
 import com.filesharing.ch_hamza.jacquard.R;
 
@@ -42,25 +43,26 @@ public class Recycler_Adapter_All_Products_new extends RecyclerView.Adapter<Recy
     public void onBindViewHolder(Recycler_Adapter_All_Products_new.MyViewHolder holder, final int position) {
         holder.name.setText(arrayList.get(position).getPro_name());
         Glide.with(activity).load(arrayList.get(position).getImg_url()).into(holder.imageView);
-//        holder.imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(activity, Product_Details.class);
-//                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
-//                intent.putExtra("SKU",arrayList.get(position).getSKU());
-//                activity.startActivity(intent);
-//            }
-//        });
-//        holder.name.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(activity, Product_Details.class);
-//                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
-//                activity.startActivity(intent);
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Product_Details.class);
+                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
+                intent.putExtra("SKU",arrayList.get(position).getSKU());
+                activity.startActivity(intent);
+            }
+        });
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Product_Details.class);
+                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
+                intent.putExtra("SKU",arrayList.get(position).getSKU());
+                activity.startActivity(intent);
+
 //
-////
-//            }
-//        });
+            }
+        });
 
 //        holder.Model_Thumbnail.setOnClickListener(new View.OnClickListener() {
 //            @Override

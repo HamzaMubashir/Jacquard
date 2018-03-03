@@ -2,6 +2,7 @@ package com.filesharing.ch_hamza.jacquard.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.filesharing.ch_hamza.jacquard.Activeties.Product_Details;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Products_pojo;
 import com.filesharing.ch_hamza.jacquard.R;
 
@@ -45,20 +47,20 @@ public class All_Products_Adapter extends RecyclerView.Adapter<All_Products_Adap
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(activity, product_details.class);
-//                intent.putExtra(intent.putExtra("product_id",arrayList.get(position).getProduct_id());
-//                activity.finish();
-//                activity.startActivity(intent);
+                Intent intent = new Intent(activity, Product_Details.class);
+                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
+                intent.putExtra("SKU",arrayList.get(position).getSKU());
+                activity.startActivity(intent);
             }
         });
 
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(activity, product_details.class);
-//                intent.putExtra(intent.putExtra("product_id",arrayList.get(position).getProduct_id());
-//                activity.finish();
-//                activity.startActivity(intent);
+                Intent intent = new Intent(activity, Product_Details.class);
+                intent.putExtra("product_id",arrayList.get(position).getProduct_id());
+                intent.putExtra("SKU",arrayList.get(position).getSKU());
+                activity.startActivity(intent);
             }
         });
 

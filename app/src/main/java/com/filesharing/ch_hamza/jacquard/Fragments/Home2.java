@@ -222,7 +222,6 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 
         HashMapForURL.put(" ", path0);
         HashMapForURL.put("  ", path1);
-        HashMapForURL.put("   ", path2);
         callSlider();
     }
 

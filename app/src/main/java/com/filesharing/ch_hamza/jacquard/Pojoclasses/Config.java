@@ -76,5 +76,5 @@ public static final String SHARED_PREF_CART = "cart";
     public static final String URL_ADD_TO_CART="http://forecast.com.pk/add_to_cart.php";
     public static final String URL_SHOW_CART="http://forecast.com.pk/getting_quote_items.php";
     public static final String URL_REMOVE_ITEM_CART="http://forecast.com.pk/remove_item_from_cart.php";
-    public static final String URL_REMOVE_HD_IMAGE="http://forecast.com.pk/all_images.php";
+    public static final String URL_REMOVE_HD_IMAGE="http://"+ip+"/jacquardzip//all_images.php";
 }
