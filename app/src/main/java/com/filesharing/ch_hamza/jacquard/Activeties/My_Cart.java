@@ -118,7 +118,7 @@ whatsapp.setOnClickListener(new View.OnClickListener() {
     }
     private void GettingCArt() {
         loading = ProgressDialog.show(My_Cart.this, "Loading...", "Please wait...", false, false);
-        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_REMOVE_ITEM_CART, new com.android.volley.Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_SHOW_CART, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 loading.dismiss();
