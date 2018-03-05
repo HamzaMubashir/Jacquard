@@ -46,6 +46,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
     LinearLayout footer;
     String id;
     ArrayList<All_product_pojo> arrayList=new ArrayList<>();
+    ArrayList<All_product_pojo> arrayList2=new ArrayList<>();
     RecyclerView recyclerView,recyclerView2;
     String newArr_cat_id="63";
     String sale_cat_id="58";
@@ -142,7 +143,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                         JSONObject data=abc.getJSONObject(num);
                         if (data.getString("product_quantity").equals("1"))
                         {
-                            arrayList.add(new All_product_pojo(data.getString("product_id"),data.getString("pro_name")
+                            arrayList2.add(new All_product_pojo(data.getString("product_id"),data.getString("pro_name")
                                     ,data.getString("img_url").replace("localhost",Config.ip),data.getString("sku")
                                     ,data.getString("product_quantity")));
                         }
@@ -162,7 +163,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 //                            i++;
 //
 //                        }
-                    adapter=new Recycler_Adapter_All_Products_new(arrayList,getActivity());
+                    adapter=new Recycler_Adapter_All_Products_new(arrayList2,getActivity());
                     recyclerView2.setAdapter(adapter);
 
 

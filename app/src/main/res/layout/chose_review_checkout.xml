@@ -14,7 +14,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/green"
+        android:background="@color/jaqard"
         android:textColor="@color/white"
         android:layout_height="wrap_content" />
     <Button
@@ -25,7 +25,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:id="@+id/chek"
-        android:background="@color/green"
+        android:background="@color/jaqard"
         android:textColor="@color/white"
         android:layout_height="wrap_content" />
 </LinearLayout>
