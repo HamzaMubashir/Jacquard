@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context="com.filesharing.ch_hamza.jacquard.Activeties.All_Products">    <include layout="@layout/action_bar">
     </include>
     <android.support.v7.widget.RecyclerView

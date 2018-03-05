@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_margin="5dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:background="@drawable/logo_j_copy"></ImageView>
 
@@ -28,14 +28,14 @@
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
             android:id="@+id/whatsapp"
-            android:background="@drawable/whatsapp"/>
+            android:background="@drawable/whatsappggg"/>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
             android:id="@+id/bag"
-            android:background="@drawable/cart_white"/>
+            android:background="@drawable/shopingcart"/>
 
     </android.support.v7.widget.Toolbar>
 

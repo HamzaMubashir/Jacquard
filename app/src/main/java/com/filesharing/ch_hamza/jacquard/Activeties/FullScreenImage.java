@@ -1,8 +1,10 @@
 package com.filesharing.ch_hamza.jacquard.Activeties;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -15,18 +17,26 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
+import com.filesharing.ch_hamza.jacquard.Adapter.FUll_Image_Adapter_Pager;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
+import com.filesharing.ch_hamza.jacquard.Pojoclasses.Full_Image_URL;
 import com.filesharing.ch_hamza.jacquard.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FullScreenImage extends AppCompatActivity {
     ImageView fullImage;
+    ViewPager viewPager;
+    private ProgressDialog loading;
+    FUll_Image_Adapter_Pager adapter;
+    ArrayList<Full_Image_URL> arrayList=new ArrayList<>();
+
     private ScaleGestureDetector scaleGestureDetector;
     private Matrix matrix = new Matrix();
     String URl;
@@ -35,23 +45,36 @@ public class FullScreenImage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen_image);
-        fullImage = (ImageView) findViewById(R.id.fullImage);
+
         final Intent intent = getIntent();
         URl = intent.getStringExtra("URL");
+        viewPager=(ViewPager)findViewById(R.id.view_pager);
 //        Glide.with(FullScreenImage.this).load(URl).into(fullImage);
-
+        loading = ProgressDialog.show(FullScreenImage.this,"Loading...","Please wait...",false,false);
         scaleGestureDetector = new ScaleGestureDetector(this,new ScaleListener());
         StringRequest request = new StringRequest(Request.Method.POST, Config.URL_REMOVE_HD_IMAGE, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try {
-                    JSONObject object = new JSONObject(response);
-                    String Url=object.getString("img");
-                    Glide.with(FullScreenImage.this).load(Url).into(fullImage);
+                    JSONArray axyz = new JSONArray(response);
+                    for (int i=0; i<axyz.length(); i ++)
+                    {
+                        JSONObject data=axyz.getJSONObject(i);
+                        arrayList.add(new Full_Image_URL(data.getString("img").replace("localhost",Config.ip)));
+
+                    }
+
+                    adapter=new FUll_Image_Adapter_Pager(FullScreenImage.this,arrayList);//now we send the name urls to adapter
+                    viewPager.setAdapter(adapter);//we set that adapter to the recycerView
+                    loading.dismiss();
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Loading Error" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FullScreenImage.this,"Nothing is Available For Time Being",Toast.LENGTH_LONG).show();
+                    loading.dismiss();
+                    onBackPressed();
                 }
 
 
@@ -63,6 +86,8 @@ public class FullScreenImage extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 //                loading.dismiss();
                 //  Log.e("Error",error.printStackTrace());
+                Toast.makeText(FullScreenImage.this,"Nothing is Available For Time Being",Toast.LENGTH_LONG).show();
+                loading.dismiss();
 
 //                Toast.makeText(getActivity().getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
 
