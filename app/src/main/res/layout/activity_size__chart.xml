@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.filesharing.ch_hamza.jacquard.Activeties.Size_Chart">
     <ImageView
+
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
