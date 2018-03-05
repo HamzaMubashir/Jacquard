@@ -51,7 +51,7 @@ public static final String SHARED_PREF_CART = "cart";
 //    public static final String URL_REMOVE_ITEM_CART="http://forecast.com.pk/remove_item_from_cart.php";
 //    public static final String URL_REMOVE_HD_IMAGE="http://forecast.com.pk/all_images.php";
 //    ///////////////////////////////LOCal//////////////////////
-    public static final String URL_CREATE_ORDER="http://http://"+ip+"/jacquardzip/create_order.php";
+    public static final String URL_CREATE_ORDER="http://http://jacquard.pk/create_order.php";
     public static final String FIRSTNAME= "firstname";
     public static final String LASTNAME = "lastname";
     public static final String CART_ID = "cart_id";
@@ -65,16 +65,16 @@ public static final String SHARED_PREF_CART = "cart";
     public static final String PHONE = "telephone";
 
     ////////GETTING PRODUCT //////
-    public static final String URL_All_Categories= "http://"+ip+"/jacquardzip/getCategories.php";
-    public static final String URL_Sub_Categories= "http://"+ip+"/jacquardzip/getSubCategories.php";
-    public static final String URL_ALL_PRODUCTS= "http://"+ip+"/jacquardzip/getAllProductsByCategories.php";
-    public static final String URL_PRODUCT_DETAILS= "http://"+ip+"/jacquardzip/get_product_details.php";
-    public static final String URL_PRODUCT_DETAILS_CONFIGURE= "http://"+ip+"/jacquardzip/congig_details_prooo_demo.php";
-    public static final String URL_BASE_WEBVIEW= "http://"+ip+"/jacquardzip/index.php";
-    public static final String URL_INVENTORY= "http://"+ip+"/jacquardzipinventory.php";
+    public static final String URL_All_Categories= "http://jacquard.pk/getCategories.php";
+    public static final String URL_Sub_Categories= "http://jacquard.pk/getSubCategories.php";
+    public static final String URL_ALL_PRODUCTS= "http://jacquard.pk/getAllProductsByCategories.php";
+    public static final String URL_PRODUCT_DETAILS= "http://jacquard.pk/get_product_details.php";
+    public static final String URL_PRODUCT_DETAILS_CONFIGURE= "http://jacquard.pk/congig_details_prooo_demo.php";
+    public static final String URL_BASE_WEBVIEW= "http://jacquard.pk/index.php";
+    public static final String URL_INVENTORY= "http://jacquard.pk/inventory.php";
     //////////SHOPPING CART APIS////////////////
-    public static final String URL_ADD_TO_CART="http://forecast.com.pk/add_to_cart.php";
-    public static final String URL_SHOW_CART="http://forecast.com.pk/getting_quote_items.php";
-    public static final String URL_REMOVE_ITEM_CART="http://forecast.com.pk/remove_item_from_cart.php";
-    public static final String URL_REMOVE_HD_IMAGE="http://"+ip+"/jacquardzip//all_images.php";
+    public static final String URL_ADD_TO_CART="http://jacquard.pk/add_to_cart.php";
+    public static final String URL_SHOW_CART="http://jacquard.pk/getting_quote_items.php";
+    public static final String URL_REMOVE_ITEM_CART="http://jacquard.pk/remove_item_from_cart.php";
+    public static final String URL_REMOVE_HD_IMAGE="http://jacquard.pk/all_images.php";
 }
