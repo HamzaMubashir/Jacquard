@@ -135,10 +135,11 @@ whatsapp.setOnClickListener(new View.OnClickListener() {
                                     data.getString("item_id"),data.getString("price"),data.getString("discount_price")));
                             grand = data.getString("total");
                             discount = data.getString("discount_price");
-                            if (data.getString("discount_price").equals(null)) {
-                                d = d + Float.valueOf(data.getString("price")) * Float.valueOf(data.getString("item_qty"));
-                            } else {
+                            if (!data.getString("discount_price").equals("null"))
+                            {
                                 d = d + Float.valueOf(data.getString("discount_price")) * Float.valueOf(data.getString("item_qty"));
+                            } else  {
+                                d = d + Float.valueOf(data.getString("price")) * Float.valueOf(data.getString("item_qty"));
                             }
                         }
                         grand2 = String.valueOf(d);

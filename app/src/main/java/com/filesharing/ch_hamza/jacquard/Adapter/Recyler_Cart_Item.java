@@ -64,7 +64,7 @@ public class Recyler_Cart_Item extends RecyclerView.Adapter<Recyler_Cart_Item.My
         holder.p_name.setText(arrayList.get(position).getName());
         holder.p_qty.setText(arrayList.get(position).getItem_qty());
         Dis = arrayList.get(position).getDis();
-        if (Dis.equals(null)){
+        if (Dis.equals("null")){
             holder.total_price.setText(arrayList.get(position).getTotal());
             holder.item_price.setText(arrayList.get(position).getPrice());
     }else {
@@ -85,7 +85,7 @@ public class Recyler_Cart_Item extends RecyclerView.Adapter<Recyler_Cart_Item.My
     private void removeitem(){
         final ProgressDialog loading;
         loading = ProgressDialog.show(activity,"loading","pleasewait",false, false);
-        StringRequest request= new StringRequest(Request.Method.POST, Config.URL_ADD_TO_CART, new com.android.volley.Response.Listener<String>() {
+        StringRequest request= new StringRequest(Request.Method.POST, Config.URL_REMOVE_ITEM_CART, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 loading.dismiss();
