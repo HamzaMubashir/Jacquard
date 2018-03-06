@@ -137,7 +137,8 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 
                 try {
                     JSONObject abc= new JSONObject(response);
-                    for (int i=1;i<=abc.length();i++)
+                    int j=abc.length();
+                    for (int i=j;i>=1;i--)
                     {
                         String num= String.valueOf(i);
                         JSONObject data=abc.getJSONObject(num);
@@ -268,7 +269,8 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 
                 try {
                     JSONObject abc= new JSONObject(response);
-                    for (int i=1;i<=abc.length();i++)
+                    int j=abc.length();
+                    for (int i=j;i>=1;i--)
                     {
                         String num= String.valueOf(i);
                         JSONObject data=abc.getJSONObject(num);

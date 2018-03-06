@@ -87,7 +87,8 @@ public class All_Products extends AppCompatActivity {
                 {
                     loading.dismiss();
                     JSONObject abc = new JSONObject(response);
-                    for(int i=1; i<= abc.length(); i++) {
+                    int j=abc.length();
+                    for(int i=j; i>= 1; i--) {
                         String num = String.valueOf(i);
                         JSONObject data = abc.getJSONObject(num);
                         arrayList.add(new Products_pojo(data.getString("product_id"), data.getString("pro_name")

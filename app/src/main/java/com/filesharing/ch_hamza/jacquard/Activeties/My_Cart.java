@@ -73,7 +73,7 @@ public class My_Cart extends AppCompatActivity {
 whatsapp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Uri uri  =Uri.parse("smsto:"+"+923237588821");
+        Uri uri  =Uri.parse("smsto:"+"+923480006161");
         Intent intent =new Intent(Intent.ACTION_SENDTO,uri);
         intent.setPackage("com.whatsapp");
         startActivity(intent);
