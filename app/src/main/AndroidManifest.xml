@@ -11,7 +11,9 @@
         android:roundIcon="@drawable/as"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activeties.MainActivity"/>
+        <activity android:name=".Activeties.Splash">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,9 +24,10 @@
         <activity android:name=".Activeties.Check_Out" />
         <activity android:name=".Activeties.All_Products" />
         <activity android:name=".Activeties.My_Cart" />
-        <activity android:name=".Activeties.Size_Chart"></activity>
-        <activity android:name=".Activeties.Product_Details"></activity>
-        <activity android:name=".Activeties.FullScreenImage"></activity>
+        <activity android:name=".Activeties.Size_Chart" />
+        <activity android:name=".Activeties.Product_Details" />
+        <activity android:name=".Activeties.FullScreenImage" />
+
     </application>
 
 </manifest>

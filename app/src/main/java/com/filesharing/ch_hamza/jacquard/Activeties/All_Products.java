@@ -19,7 +19,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.filesharing.ch_hamza.jacquard.Adapter.All_Products_Adapter;
-import com.filesharing.ch_hamza.jacquard.MainActivity;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Products_pojo;
 import com.filesharing.ch_hamza.jacquard.R;

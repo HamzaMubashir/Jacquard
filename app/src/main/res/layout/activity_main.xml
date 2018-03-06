@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.filesharing.ch_hamza.jacquard.MainActivity">
+    tools:context="com.filesharing.ch_hamza.jacquard.Activeties.MainActivity">
 
     <!--<include layout="@layout/action_bar">    </include>-->
     <android.support.design.widget.AppBarLayout

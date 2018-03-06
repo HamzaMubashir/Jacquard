@@ -1,4 +1,4 @@
-package com.filesharing.ch_hamza.jacquard;
+package com.filesharing.ch_hamza.jacquard.Activeties;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,10 +12,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import com.filesharing.ch_hamza.jacquard.Activeties.My_Cart;
+
 import com.filesharing.ch_hamza.jacquard.Adapter.Home_Pager_Adapter;
 import com.filesharing.ch_hamza.jacquard.Fragments.Catagories;
 import com.filesharing.ch_hamza.jacquard.Fragments.Home2;
+import com.filesharing.ch_hamza.jacquard.R;
 
 public class MainActivity extends AppCompatActivity {
 

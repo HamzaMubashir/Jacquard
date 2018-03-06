@@ -25,9 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.filesharing.ch_hamza.jacquard.Adapter.Recyler_Cart_Item;
-import com.filesharing.ch_hamza.jacquard.MainActivity;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Cart_item_pojo;
-import com.filesharing.ch_hamza.jacquard.Pojoclasses.Catagories;
 import com.filesharing.ch_hamza.jacquard.Pojoclasses.Config;
 import com.filesharing.ch_hamza.jacquard.R;
 
