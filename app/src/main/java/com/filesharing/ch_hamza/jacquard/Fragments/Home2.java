@@ -173,7 +173,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                 catch (JSONException e) {
                     e.printStackTrace();
 //                    loading.dismiss();
-                    new_a.setVisibility(View.GONE);
+                    new_a2.setVisibility(View.GONE);
                     sale_tx.setVisibility(View.GONE);
 
                 }
@@ -188,7 +188,8 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
             public void onErrorResponse(VolleyError error) {
 //                loading.dismiss();
                 //  Log.e("Error",error.printStackTrace());
-                new_a.setVisibility(View.GONE);
+                new_a2.setVisibility(View.GONE);
+                sale_tx.setVisibility(View.GONE);
 //                Toast.makeText(getActivity().getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
 
             }
@@ -304,7 +305,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 
                 catch (JSONException e) {
                     e.printStackTrace();
-//                    loading.dismiss();
+                    loading.dismiss();
                     new_a.setVisibility(View.GONE);
                     new_tx.setVisibility(View.GONE);
                 }
@@ -320,6 +321,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
 //                loading.dismiss();
                 //  Log.e("Error",error.printStackTrace());
                 new_a.setVisibility(View.GONE);
+                new_tx.setVisibility(View.GONE);
 //                Toast.makeText(getActivity().getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
 
             }

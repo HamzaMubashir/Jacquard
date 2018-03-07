@@ -111,7 +111,7 @@ public class All_Products extends AppCompatActivity {
         public void onErrorResponse(VolleyError error) {
             loading.dismiss();
             //  Log.e("Error",error.printStackTrace());
-            Toast.makeText(All_Products.this.getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(All_Products.this.getApplicationContext(), "Network Error" , Toast.LENGTH_SHORT).show();
             onBackPressed();
 
         }

@@ -98,6 +98,10 @@ public class Catagories extends Fragment {
 
                 catch (JSONException e) {
                     e.printStackTrace();
+                    loading.dismiss();
+                    //  Log.e("Error",error.printStackTrace());
+                    //Toast.makeText(getActivity().getApplicationContext(), "Volley Error" + error, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Network Connection Error" , Toast.LENGTH_SHORT).show();
                 }
                 //  tvSurah.setText("Response is: "+ response.substring(0,500));
             }
