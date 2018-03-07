@@ -256,14 +256,14 @@ public class Check_Out extends AppCompatActivity {
                     ship1.setText(shipping);
                     grand1.setText(total);
                     //Getting out sharedpreferences
-                    SharedPreferences preferences = getSharedPreferences(Config.SHARED_PREF_CART_NO, Context.MODE_PRIVATE);
-                    //Getting editor
-                    SharedPreferences.Editor editor = preferences.edit();
-
-                    //Putting blank value to email
-                    editor.putString(Config.SHARED_PREF_CART_NO, null);
-                    editor.clear();
-                    editor.apply();
+//                    SharedPreferences preferences = getSharedPreferences(Config.SHARED_PREF_CART_NO, Context.MODE_PRIVATE);
+//                    //Getting editor
+//                    SharedPreferences.Editor editor = preferences.edit();
+//
+//                    //Putting blank value to email
+//                    editor.putString(Config.SHARED_PREF_CART_NO, null);
+//                    editor.clear();
+//                    editor.apply();
 
                     done.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -296,7 +296,7 @@ public class Check_Out extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 //  Log.e("Error",error.printStackTrace());
                 loading.dismiss();
-                Toast.makeText(getApplicationContext(), "Network Error" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Network Error"+error , Toast.LENGTH_SHORT).show();
 
             }
         }

@@ -538,7 +538,7 @@ LinearLayout spinners;
                     enter=Float.valueOf(ed_qty.getText().toString());
                     if (given>=enter)
                     {
-                        ADDTOCART();
+                        ADDTOCARTWITHCARTNO();
                     }
                     else
 

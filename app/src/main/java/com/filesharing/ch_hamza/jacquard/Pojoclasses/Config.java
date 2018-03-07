@@ -51,7 +51,7 @@ public static final String SHARED_PREF_CART = "cart";
 //    public static final String URL_REMOVE_ITEM_CART="http://forecast.com.pk/remove_item_from_cart.php";
 //    public static final String URL_REMOVE_HD_IMAGE="http://forecast.com.pk/all_images.php";
 //    ///////////////////////////////LOCal//////////////////////
-    public static final String URL_CREATE_ORDER="http://http://jacquard.pk/create_order.php";
+    public static final String URL_CREATE_ORDER="http://jacquard.pk/create_order.php";
     public static final String FIRSTNAME= "firstname";
     public static final String LASTNAME = "lastname";
     public static final String CART_ID = "cart_id";
