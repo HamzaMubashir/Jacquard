@@ -61,7 +61,7 @@ public class All_Products extends AppCompatActivity {
             }
         });
         recyclerView=(RecyclerView)findViewById(R.id.model_recyclerView);
-        layoutManager=new GridLayoutManager(this,2);
+        layoutManager=new GridLayoutManager(this,3);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         Intent intent =getIntent();
@@ -92,7 +92,7 @@ public class All_Products extends AppCompatActivity {
                         JSONObject data = abc.getJSONObject(num);
                         arrayList.add(new Products_pojo(data.getString("product_id"), data.getString("pro_name")
                                 , data.getString("img_url").replace("localhost", Config.ip),data.getString("sku")
-                                ,data.getString("product_quantity")));
+                                ,data.getString("product_quantity"),data.getString("price").replace(".0000","Rs")));
 
                     }
                 adapter=new All_Products_Adapter(arrayList,All_Products.this);

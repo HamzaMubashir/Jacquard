@@ -20,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -97,8 +98,8 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                 startActivity(myIntent);
             }
         });
-//        Glide.with(getActivity()).load(saleimage).into(sale);
-//        Glide.with(this).load(bajiImage).into(New );
+        Glide.with(getActivity()).load(saleimage).into(sale);
+        Glide.with(this).load(bajiImage).into(New );
         GetAllProducts();
         GetAllProducts2();
         sale.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +147,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                         {
                             arrayList2.add(new All_product_pojo(data.getString("product_id"),data.getString("pro_name")
                                     ,data.getString("img_url").replace("localhost",Config.ip),data.getString("sku")
-                                    ,data.getString("product_quantity")));
+                                    ,data.getString("product_quantity"),data.getString("price").replace(".0000","Rs")));
                         }
 
                     }
@@ -279,7 +280,7 @@ public class Home2 extends Fragment implements BaseSliderView.OnSliderClickListe
                         {
                             arrayList.add(new All_product_pojo(data.getString("product_id"),data.getString("pro_name")
                                     ,data.getString("img_url").replace("localhost",Config.ip),data.getString("sku")
-                                    ,data.getString("product_quantity")));
+                                    ,data.getString("product_quantity"),data.getString("price").replace(".0000","Rs")));
                         }
 
                     }

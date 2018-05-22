@@ -10,15 +10,25 @@ private String product_name;
 private String product_uri;
     private String SKU;
     private String QTY;
+    private String Price;
 
-public Products_pojo (String product_id, String product_name, String product_uri,String SKU,String QTY)
+public Products_pojo (String product_id, String product_name, String product_uri,String SKU,String QTY, String Price)
 {
     this.product_id = product_id;
     this.product_name = product_name;
     this.product_uri = product_uri;
     this.SKU = SKU;
     this.QTY = QTY;
+    this.Price = Price;
 }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
+    }
 
     public void setProduct_id(String product_id) {
         this.product_id = product_id;

@@ -24,6 +24,7 @@
             android:layout_marginRight="12dp"
             android:gravity="center"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_book"
             android:textSize="12sp"
             android:text="Developed By INNOVATORS TECHNOLOGIES."/>
     </LinearLayout>

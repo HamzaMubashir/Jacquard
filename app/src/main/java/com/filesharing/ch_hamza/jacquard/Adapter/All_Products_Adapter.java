@@ -44,6 +44,7 @@ public class All_Products_Adapter extends RecyclerView.Adapter<All_Products_Adap
 
         holder.name.setText(arrayList.get(position).getProduct_name());
         Glide.with(activity).load(arrayList.get(position).getProduct_uri()).into(holder.imageView);
+        holder.price.setText(arrayList.get(position).getPrice());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,13 +75,14 @@ public class All_Products_Adapter extends RecyclerView.Adapter<All_Products_Adap
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
+        TextView name,price;
         ImageView imageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.products);
             imageView = (ImageView) itemView.findViewById(R.id.thumbnail);
+            price = (TextView) itemView.findViewById(R.id.tvprice);
         }
 
     }

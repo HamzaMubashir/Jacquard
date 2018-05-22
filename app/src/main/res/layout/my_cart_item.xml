@@ -30,6 +30,7 @@
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/gotham_book"
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:layout_marginTop="2dp"
@@ -39,6 +40,7 @@
                         android:layout_width="wrap_content"
                         android:padding="2dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
                         android:text="Name:"/>
@@ -47,6 +49,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
+                        android:fontFamily="@font/gotham_book"
                         android:id="@+id/p_name"
                         />
                 </LinearLayout>
@@ -61,6 +64,7 @@
                         android:layout_width="wrap_content"
                         android:padding="2dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
                         android:text="Item Price:"/>
@@ -69,6 +73,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
+                        android:fontFamily="@font/gotham_book"
                         android:id="@+id/item_price"
                         />
                 </LinearLayout>
@@ -83,6 +88,7 @@
                         android:layout_width="wrap_content"
                         android:padding="2dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
                         android:text="Quantity:"/>
@@ -91,6 +97,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
+                        android:fontFamily="@font/gotham_book"
                         android:id="@+id/p_qty"
                         />
                 </LinearLayout>
@@ -107,10 +114,12 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
+                        android:fontFamily="@font/gotham_book"
                         android:text="Total Price:"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
                         android:textSize="16sp"
                         android:textColor="@color/jumbo"
                         android:id="@+id/total_price"
@@ -122,6 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/gotham_book"
                     android:background="@color/brow_j"
                     android:text="Remove"
                     android:textColor="@color/white" />

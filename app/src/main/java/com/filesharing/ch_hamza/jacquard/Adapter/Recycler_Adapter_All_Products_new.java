@@ -42,6 +42,7 @@ public class Recycler_Adapter_All_Products_new extends RecyclerView.Adapter<Recy
     @Override
     public void onBindViewHolder(Recycler_Adapter_All_Products_new.MyViewHolder holder, final int position) {
         holder.name.setText(arrayList.get(position).getPro_name());
+        holder.price.setText(arrayList.get(position).getPrice());
         Glide.with(activity).load(arrayList.get(position).getImg_url()).into(holder.imageView);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,11 +84,13 @@ public class Recycler_Adapter_All_Products_new extends RecyclerView.Adapter<Recy
     public static class MyViewHolder extends  RecyclerView.ViewHolder
     {
         TextView name;
+        TextView price;
         ImageView imageView;
         public MyViewHolder(View itemView) {
             super(itemView);
             name=(TextView)itemView.findViewById(R.id.tvmodelname);
             imageView=(ImageView)itemView.findViewById(R.id.thumbnail);
+            price=(TextView)itemView.findViewById(R.id.tvprice);
         }
     }
 }

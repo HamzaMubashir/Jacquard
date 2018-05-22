@@ -19,6 +19,7 @@
                 android:id="@+id/thumbnail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_book"
                 android:layout_gravity="center"
                 android:scaleType="fitXY" />
 
@@ -28,10 +29,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:fontFamily="@font/gotham_book"
                 android:text="All Products"
                 android:layout_margin="5dp"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/tvprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Price"
+                android:fontFamily="@font/gotham_book"
+                android:layout_gravity="center"
+                android:textColor="@color/red"
+                android:textSize="14dp" />
 
         </LinearLayout>
 

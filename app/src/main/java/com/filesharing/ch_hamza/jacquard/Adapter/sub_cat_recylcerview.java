@@ -62,7 +62,7 @@ public class sub_cat_recylcerview extends RecyclerView.Adapter<sub_cat_recylcerv
 
     @Override
     public int getItemCount() {
-        return 0;
+        return arrayList.size();
     }
 
 
